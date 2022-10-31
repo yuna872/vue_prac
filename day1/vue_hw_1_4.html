@@ -9,17 +9,13 @@
 <body>
   
   <div id="app1">
-    <h1>첫 번째 입력 : {{ msg }}</h1>
-    <input @input="onInputChange" type="text">
-  </div>
-
-  
-  <div id="app2">
+    <h1>첫 번째 입력 : {{ msg1 }}</h1>
+    <input type="text" v-model="msg1">
     <h1>두 번째 입력 : {{ msg2 }}</h1>
-    <input @input="onInputChange" type="text">
+    <input type="text" v-model="msg2">
+    <h1>합산 입력 : {{ msg1 }} {{ msg2 }}</h1>
   </div>
 
-   <div></div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -28,29 +24,12 @@
     const myStr2 = ''
     const app1 = new Vue({
       el: '#app1',
-      data: {
-        msg:'',
+      data: { 
+        msg1:'',
+        msg2:'',
       },
-      methods: {
-        onInputChange: function (event) {
-          this.msg = event.target.value
-          myStr1 = this.msg
-        },
-      }
     })
 
-    const app2 = new Vue({
-      el: '#app2',
-      data: {
-        msg:'',
-      },
-      methods: {
-        onInputChange: function (event) {
-          this.msg = event.target.value
-          myStr2 = this.msg
-        },
-      }
-    })
   </script>
 </body>
 </html>
