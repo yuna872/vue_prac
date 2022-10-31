@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>회문검사기</h1>
+  <div id="app">
+    <input v-model="word" type="text">
+    <button v-on:click="isPalin(word)">확인하기</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        word : '',
+      },
+      methods: {
+        isPalin: function () {
+          if (this.word === '') {
+            alert('입력값이 없습니다!')
+          }
+          else if (this.word == this.word.split('').reverse().join('')){
+            alert('회문입니다!')
+          }
+          else {
+            alert('회문이 아닙니다!')
+          }
+          return
+        }
+      }
+    })
+  </script>
+</body>
+</html>
