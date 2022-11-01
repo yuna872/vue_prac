@@ -20,9 +20,9 @@
       <option value="done">완료</option>
     </select>
     <input type="text" v-model="todo">
-    <button @click="addTodoThing(todo, value)">+</button>
+    <button @click="addTodoThing(todo)">+</button>
     <ul>
-      <li v-for="todo in todoList" :class="{done:todo.isChecked}">
+      <li v-for="todo in showList" :class="{done:todo.isChecked}">
         <input type="checkbox" @click='todo.isChecked=!todo.isChecked' v-model="todo.isChecked">
         {{ todo.content }}</li>
     </ul>
@@ -36,11 +36,14 @@
       el : '#app',
       data : {
         todo :"",
-        todoList : [],
+        todoList : JSON.parse(localStorage.getItem('todoList')),
         status:"",
       },
       methods: {
         addTodoThing : function (todo) {
+          if (this.todoList == null) {
+              this.todoList = []
+          }
           if (todo.length === 0) {
             alert('내용을 입력해 주세요!')
           } else {
@@ -55,6 +58,27 @@
           this.todoList = this.todoList.filter(todo => todo.isChecked === false)
         }
       },
+      computed : {
+        showList() {
+          if (this.status === 'ing'){
+            return this.todoList.filter(todo => todo.isChecked === false)
+          }
+          else if (this.status === 'done'){
+            return this.todoList.filter(todo => todo.isChecked === true)
+          }
+          else {
+            return this.todoList
+          }
+        },
+    },
+    watch: {
+      todoList: {
+        deep:true,
+        handler() {
+          localStorage.setItem('todoList', JSON.stringify(this.todoList))
+        }
+      }
+    }
     })
   </script>
 </body>
