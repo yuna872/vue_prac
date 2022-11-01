@@ -24,23 +24,27 @@
 <body>
   <div id="app">
     <h1>버튼을 골라주세요</h1>
-    <button @click="handler">선택 1</button>
-    <button @click="handler">선택 2</button>
+    <button @click="click1" :class="{selected:btn1}">선택 1</button>
+    <button @click="click2" :class="{selected:btn2}">선택 2</button>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        isActive1 : false,
-        isActive2 : false
+        btn1 : false,
+        btn2 : false,
       },
       methods: {
-        handler(event) {
-          if (isActive1) {
-            event.target.classList.add('selected')
+        click1() {
+          this.btn2 = false
+          this.btn1 = !this.btn1
+        },
+        click2() {
+          this.btn1 = false
+          this.btn2 = !this.btn2
         }
-      }
+    }
     })
   </script>
 </body>

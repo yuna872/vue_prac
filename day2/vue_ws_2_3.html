@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done{
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Todo List</h1>
+    <select v-model="status">
+      <option value="all">전체</option>
+      <option value="ing">진행중</option>
+      <option value="done">완료</option>
+    </select>
+    <input type="text" v-model="todo">
+    <button @click="addTodoThing(todo, value)">+</button>
+    <ul>
+      <li v-for="todo in todoList" :class="{done:todo.isChecked}">
+        <input type="checkbox" @click='todo.isChecked=!todo.isChecked' v-model="todo.isChecked">
+        {{ todo.content }}</li>
+    </ul>
+    <button @click="removeDone()">완료 목록 삭제</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const ulTag = document.querySelector('ul')
+    const app = new Vue({
+      el : '#app',
+      data : {
+        todo :"",
+        todoList : [],
+        status:"",
+      },
+      methods: {
+        addTodoThing : function (todo) {
+          if (todo.length === 0) {
+            alert('내용을 입력해 주세요!')
+          } else {
+            if (this.status === 'done') {
+              this.todoList.push({content:this.todo, isChecked:true})
+            } else {
+              this.todoList.push({content:this.todo, isChecked:false})
+            }
+          }
+        },
+        removeDone : function () {
+          this.todoList = this.todoList.filter(todo => todo.isChecked === false)
+        }
+      },
+    })
+  </script>
+</body>
+</html>
