@@ -4,12 +4,12 @@
     
     <SearchBar/>
     
-    <div style="width:100%">
-      <b-row>
-        <b-col cols="8" lg="12"><VideoList/></b-col>
-        <b-col cols="4" lg="12"><VideoDetail/></b-col>
+    <b-container class="grid-box">
+      <b-row class="row">
+        <b-col class="col" cols="11" lg="8"><VideoList/></b-col>
+        <b-col class="col" cols="11" lg="4"><VideoDetail/></b-col>
       </b-row>
-    </div>
+    </b-container>
     
   </div>
 </template>
@@ -45,7 +45,20 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border : solid 3px red;
-  width : 90%;
 }
+.grid-box {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border : solid 3px red;
+  margin : 20px;
+  padding : 10px;
+}
+.row {
+  width : 900px;
+}
+.col {
+  margin : auto;
+}
+
 </style>
