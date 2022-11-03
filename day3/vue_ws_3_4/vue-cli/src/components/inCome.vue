@@ -2,11 +2,11 @@
   <div>
     <p>
       <span>연봉 입력 (만원) : </span>
-      <input type="text" v-model="income">
+      <input type="number" v-model.number="income">
     </p>
     <p>
       <span>세액감면액 (만원) : </span>
-      <input type="text" v-model="reduction">
+      <input type="number" v-model.number="reduction">
     </p>
     <hr>
     <h2>종합소득금액 : {{ income }}만원</h2>
@@ -40,5 +40,9 @@ export default {
 </script>
 
 <style>
-
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 </style>

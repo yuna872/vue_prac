@@ -1,21 +1,27 @@
 <template>
   <div id="container">
+    <h2>1단계</h2>
     <div id="box">
     <div class='btn' id="left-btn">
-      <i 
+      <span>
+        <i 
         class="fa-solid fa-circle-chevron-left fa-2x"
         @click="goBackPage"></i>
+      </span>
     </div>
     <div id="imgBox">
-      <img src="../assets/ssanocolor.png">
+      <img src="../assets/saffling.png">
     </div>
     <div class='btn' id="right-btn">
-      <i 
+      <span>
+        <i 
         class="fa-solid fa-circle-chevron-right fa-2x"
         @click="goNextPage" 
         ></i>
+      </span>
     </div>
   </div>
+  <h2>싸플링</h2>
 </div>
 </template>
 
@@ -40,14 +46,18 @@ export default {
   box-shadow: 5px 5px 10px gray;
   margin: 50px auto auto auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 20px 0px;
+  justify-content: center;
+  /* border : solid 2px red; */
 }
 #box{
   width : 700px;
-  margin: auto;
+  margin: 10px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  /* border : solid 2px red; */
 }
 
 img {
@@ -56,10 +66,8 @@ img {
 }
 .btn {
   display: flex;
-  flex-direction: row;
+  align-content: center;
+  align-items: center;
 }
-i {
-  padding: 0px;
-  border: solid 2px red;
-}
+
 </style>

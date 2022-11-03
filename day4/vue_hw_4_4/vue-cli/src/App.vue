@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <h1>캐릭터 진화 단계 가이드</h1>
-    <button @click="goHome">HOME</button>
-    <button @click="letsStart">Start</button>
+    <div>
+      <button @click="goHome">HOME</button>
+      <button @click="letsStart">Start</button>
+    </div>
     <HomePage v-if="isStarted===false"/>
     <nonColor 
       @go-back-page="goBackPage"
@@ -55,19 +57,20 @@ export default {
       console.log('시작버튼')
     },
     goNextPage() {
-      if (this.page===4) {
+      if (this.dataNumber===4) {
         alert('Home으로 돌아갑니다!')
-        this.page = 1
+        this.dataNumber = 1
         this.isStarted = false
       } else {
-        this.page += 1
+        this.dataNumber += 1
+        console.log(this.dataNumber)
       }
     },
     goBackPage() {
-      if (this.page===1) {
+      if (this.dataNumber===1) {
         this.isStarted = false
       } else {
-        this.page -= 1
+        this.dataNumber -= 1
       }
     }
   }
@@ -83,6 +86,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: auto;
+  display: flex;
+  /* border: solid 2px red; */
+  flex-direction: column;
 }
 
 button {
