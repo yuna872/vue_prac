@@ -36,5 +36,6 @@ export default {
     border-radius: 5px;
     flex-grow: 1;
     margin-left : 5px;
+    padding : 10px;
   }
 </style>

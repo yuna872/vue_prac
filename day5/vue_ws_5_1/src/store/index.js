@@ -11,19 +11,19 @@ export default new Vuex.Store({
         title : '아메리카노',
         price : 4500,
         selected: false,
-        image: '#'
+        image: 'https://source.unsplash.com/featured/?americano'
       },
       {
         title : '카페라떼',
         price : 5100,
         selected: false,
-        image: '#'
+        image: 'https://source.unsplash.com/featured/?latte'
       },
       {
         title : '자몽허니블랙티',
         price : 5800,
         selected: false,
-        image: '#'
+        image: 'https://source.unsplash.com/featured/?blacktea'
       },
     ],
     sizeList: [

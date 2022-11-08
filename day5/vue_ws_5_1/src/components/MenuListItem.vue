@@ -1,6 +1,11 @@
 <template>
   <div class="menu-box">
-    <div class="menu" @click="selectMenu" :class="{selected: menu.selected}">{{ menu.title }} {{ menu.price }}</div>
+    <div class="menu" @click="selectMenu" :class="{selected: menu.selected}">
+      <!-- <img src={{ menu.image }}> -->
+      <div><img :src="menu.image"></div>
+      <div>{{ menu.title }}</div>
+      <div>{{ menu.price }}</div>
+    </div>
   </div>
 </template>
 
@@ -29,12 +34,21 @@ export default {
     margin : 5px;
     border-radius: 5px;
     height : 40px;
-    color: rgb(24, 24, 24)
+    color: rgb(24, 24, 24);
     /* text-align: center; */
+    display : flex;
+    justify-content: space-between;
+    padding : 5px;
   }
 
   .selected{
     background-color: #579062;
     color: white;
+  }
+
+  img {
+    width : 30px;
+    height : 30px;
+    border-radius: 5px;
   }
 </style>

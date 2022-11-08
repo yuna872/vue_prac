@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Coffee Order App</h1>
+    <h1 style="text-align:center;margin:20px 0px;">Coffee Order App</h1>
     <div class="container">
       <MenuList/>
       <SizeList/>

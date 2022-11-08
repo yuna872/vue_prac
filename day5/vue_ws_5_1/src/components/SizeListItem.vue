@@ -1,6 +1,9 @@
 <template>
   <div class="size-box">
-    <div class="size" @click="selectSize" :class="{selected:size.selected}">{{ size.name }} {{ size.price }}</div>
+    <div class="size" @click="selectSize" :class="{selected:size.selected}">
+      <div>{{ size.name }}</div>
+      <div>{{ size.price }}</div>
+    </div>
   </div>
 </template>
 
@@ -29,8 +32,12 @@ export default {
     margin : 5px;
     border-radius: 5px;
     height : 40px;
-    color: rgb(24, 24, 24)
+    color: rgb(24, 24, 24);
     /* text-align: center; */
+    display: flex;
+    padding : 10px;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .selected{

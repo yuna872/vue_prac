@@ -1,9 +1,13 @@
 <template>
   <div>
-    <div class="cart-button" @click="addOrder">장바구니 담기</div>
-    <div>
-      <h3>주문 내역</h3>
-      <p>총 {{ totalOrderCount }}건 : {{ totalOrderPrice }}</p>
+    <div class="cart-button" @click="addOrder">
+      <div>장바구니 담기</div>
+    </div>
+    <div class="order-list">
+      <div>
+        <h3>주문 내역</h3>
+        <p>총 {{ totalOrderCount }}건 : {{ totalOrderPrice }} 원</p>
+      </div>
       <OrderListItem
         v-for="(order, index) in orderList"
         :key="index"
@@ -45,8 +49,18 @@ export default {
   background-color: #579062;
   color: white;
   border-radius: 5px;
-  height : 35px;
-  margin : 15px 0px;
-  text-align: center;
-}
+  height : 40px;
+  margin : 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .order-list{
+    background-color: rgb(232, 232, 232);
+    /* height : 200px; */
+    display: flex;
+    flex-direction: column;
+    padding : 20px;
+  }
 </style>
