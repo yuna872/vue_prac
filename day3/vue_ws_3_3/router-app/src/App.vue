@@ -3,11 +3,19 @@
     <h1>캐릭터 진화 단계 가이드</h1>
     <div class="btnBox">
       <button type="button" class="yellowBtn" @click="goHome">Home</button>
-      <button type="button" class="yellowBtn" >Start</button>
+      <button type="button" class="yellowBtn">Start</button>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+  export default {
+    methods: {
+      
+    }
+  }
+</script>
 
 <style>
 #app {

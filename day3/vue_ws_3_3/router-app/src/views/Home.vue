@@ -1,32 +1,24 @@
 <template>
   <div>
-    <div class="banner" v-if="page===0">
+    <div class="banner">
+      <h3>Start 버튼으로 시작해 보세요!</h3>
       <img src="@/assets/ssafy-banner.png" style="width:100%;height:100%">
     </div>
-    <Happeed v-else-if="page===1"/>
-  
   </div>
 </template>
 
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <script>
-import Happeed from '@/views/Happeed';
 
 export default {
   name : 'home',
-  components: {
-    Happeed,
-  },
   computed: {
     page() {
       return this.$store.state.page
     }
   },
   methods: {
-    goHome() {
-      this.$router.push({name : 'home'})
-    }
   }
 }
 </script>

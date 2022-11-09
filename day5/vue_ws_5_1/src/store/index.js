@@ -43,6 +43,23 @@ export default new Vuex.Store({
         selected: false,
       },
     ],
+    optionList: [
+      {
+        name : '샷 추가',
+        price : 500,
+        count : 0
+      },
+      {
+        name : '바닐라 시럽',
+        price : 500,
+        count : 0
+      },
+      {
+        name : '자몽 시럽',
+        price : 500,
+        count : 0
+      },
+    ]
   },
   getters: {
     totalOrderCount(state) {
@@ -61,14 +78,18 @@ export default new Vuex.Store({
       // console.log(state.menuList)
       const selectedMenu = state.menuList.find((menu)=>menu.selected === true)
       const selectedSize = state.sizeList.find((size)=>size.selected === true)
+      const selectedOptions = state.optionList
       
-      state.orderList.push({menu: selectedMenu, size: selectedSize})
+      state.orderList.push({menu: selectedMenu, size: selectedSize, options: selectedOptions})
       
       state.menuList.forEach((menu)=>{
         menu.selected = false
       })
       state.sizeList.forEach((size)=>{
         size.selected = false
+      })
+      state.optionList.forEach((option)=>{
+        option.count = 0
       })
     },
     updateMenuList: function (state, menuItem) {
@@ -92,6 +113,26 @@ export default new Vuex.Store({
         return size
       })
       // console.log(state.sizeList) 
+    },
+    increase(state, optionItem){
+      state.optionList = state.optionList.map((option)=> {
+        if (option === optionItem) {
+          option.count += 1
+        }
+        return option
+      })
+    },
+    decrease(state, optionItem){
+      state.optionList = state.optionList.map((option)=> {
+        if (option === optionItem) {
+          if (option.count === 0) {
+            alert('이미 0개')
+          }
+          else {
+          option.count -= 1}
+        }
+        return option
+      })
     },
   },
   actions: {

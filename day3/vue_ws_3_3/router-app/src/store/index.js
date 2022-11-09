@@ -5,11 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    page : 0,
+    
   },
   getters: {
   },
   mutations: {
+    
   },
   actions: {
   },

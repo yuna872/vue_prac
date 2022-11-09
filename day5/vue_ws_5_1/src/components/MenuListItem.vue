@@ -39,6 +39,7 @@ export default {
     display : flex;
     justify-content: space-between;
     padding : 5px;
+    align-items: center;
   }
 
   .selected{

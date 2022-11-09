@@ -1,6 +1,11 @@
 <template>
     <div class="cart-item">
-      <div style="display:flex;align-items:center;"><img class='cart-image' :src="order.menu.image"> {{ order.menu.title }} {{ order.size.name }}</div>
+      <div style="display:flex;align-items:center;">
+        <img class='cart-image' :src="order.menu.image"> 
+          {{ order.menu.title }} 
+          {{ order.size.name }} 
+          {{ order.options }}
+      </div>
       <div>가격 : {{ order.menu.price }} + {{ order.size.price }} </div>
     </div>
 </template>

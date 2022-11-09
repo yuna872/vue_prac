@@ -4,6 +4,7 @@
     <div class="container">
       <MenuList/>
       <SizeList/>
+      <OptionList/>
     </div>
     <div>
       <OrderList/> 
@@ -17,6 +18,7 @@
 import MenuList from '@/components/MenuList'
 import SizeList from '@/components/SizeList'
 import OrderList from '@/components/OrderList';
+import OptionList from '@/components/OptionList'
 
 export default {
   name: 'App',
@@ -24,6 +26,7 @@ export default {
     MenuList,
     SizeList,
     OrderList,
+    OptionList,
   }
 }
 </script>
@@ -45,6 +48,7 @@ ul {
   background-color: rgb(232, 232, 232);
   padding : 15px;
   border-radius: 5px;
+  font-size : 12px;
   /* justify-content: space-evenly; */
 }
 

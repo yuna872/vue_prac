@@ -1,24 +1,28 @@
 <template>
   <div class="container">
-    <h2>시작</h2>
+    <h2>1단계</h2>
     <div class="box-bottom">
-      <i class="fa-solid fa-circle-chevron-left fa-lg" @click="goHome"></i>
-      <div><img src="@/assets/happeed.png"></div>
+      <i class="fa-solid fa-circle-chevron-left fa-lg" @click="goPrePage"></i>
+      <div><img src="@/assets/happling.png"></div>
       <i class="fa-solid fa-circle-chevron-right fa-lg" @click="goNextPage"></i>
     </div>
-    <h3>해피드</h3>
+    <h3>해플링</h3>
   </div>
 </template>
 
 <script>
 export default {
-  name : 'happeed',
+  name : 'happling',
+  computed: {
+   
+  },
   methods: {
-    goHome() {
-      this.$router.push({name : 'home'})
+    goPrePage() {
+      alert('이전 단계로 돌아갈 수 없습니다!')
+      return
     },
     goNextPage() {
-      this.$router.push({name : 'happling'})
+      this.$router.push({name: 'happlossome'})
     }
   }
 }

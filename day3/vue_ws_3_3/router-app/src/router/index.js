@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/components/Home'
+import Home from '@/views/Home'
 import Happeed from '@/views/Happeed'
+import Happling from '@/views/Happling'
+import Happlossome from '@/views/Happlossome'
+import Happlower from '@/views/Happlower'
+import NotFound from '@/views/NotFound'
 
 
 Vue.use(VueRouter)
@@ -17,6 +21,30 @@ const routes = [
     name: 'happeed',
     component: Happeed
   },
+  {
+    path: '/happling',
+    name: 'happling',
+    component: Happling
+  },
+  {
+    path: '/happlossome',
+    name: 'happlossome',
+    component: Happlossome
+  },
+  {
+    path: '/happlower',
+    name: 'happlower',
+    component: Happlower
+  },
+  {
+    path : '/notfound',
+    name: 'notfound',
+    component: NotFound
+  },
+  {
+    path : '*',
+    redirect : '/notfound'
+  }
 ]
 
 const router = new VueRouter({
