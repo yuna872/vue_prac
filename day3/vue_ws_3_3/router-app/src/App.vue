@@ -2,8 +2,8 @@
   <div id="app">
     <h1>캐릭터 진화 단계 가이드</h1>
     <div class="btnBox">
-      <button type="button" class="yellowBtn" @click="goHome">Home</button>
-      <button type="button" class="yellowBtn">Start</button>
+      <button type="button" class="yellowBtn">Home</button>
+      <button type="button" class="yellowBtn" @click="goHappeed">Start</button>
     </div>
     <router-view/>
   </div>
@@ -12,7 +12,9 @@
 <script>
   export default {
     methods: {
-      
+      goHappeed() {
+        this.$router.push({name : 'happeed'})
+      }
     }
   }
 </script>

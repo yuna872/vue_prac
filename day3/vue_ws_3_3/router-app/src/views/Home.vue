@@ -13,12 +13,10 @@
 
 export default {
   name : 'home',
-  computed: {
-    page() {
-      return this.$store.state.page
+  data() {
+    return {
+      page : 0
     }
-  },
-  methods: {
   }
 }
 </script>

@@ -1,10 +1,15 @@
 <template>
-  <div class="detailbox">디테일 페이지</div>
+  <div class="detailbox">
+    {{ selectedVideo }}
+  </div>
 </template>
 
 <script>
 export default {
   name: 'VideoDetail',
+  props: {
+    selectedVideo : Object,
+  }
 }
 </script>
 

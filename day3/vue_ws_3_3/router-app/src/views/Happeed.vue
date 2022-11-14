@@ -13,6 +13,11 @@
 <script>
 export default {
   name : 'happeed',
+  data() {
+    return {
+      page : 1
+    }
+  }, 
   methods: {
     goHome() {
       this.$router.push({name : 'home'})
@@ -20,6 +25,12 @@ export default {
     goNextPage() {
       this.$router.push({name : 'happling'})
     }
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log('to', to)
+    console.log('from', from)
+    console.log('next', next)
+    next()
   }
 }
 </script>

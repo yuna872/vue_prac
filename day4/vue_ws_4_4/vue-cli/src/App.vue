@@ -56,6 +56,7 @@ export default {
       }
     })
     .then((res)=>{
+      console.log(res)
       this.selectedVideo = res.data.items[0]
       this.videoTitle = this.selectedVideo.snippet.title
     })
