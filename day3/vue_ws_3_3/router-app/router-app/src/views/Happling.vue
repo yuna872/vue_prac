@@ -18,8 +18,7 @@ export default {
   },
   methods: {
     goPrePage() {
-      alert('이전 단계로 돌아갈 수 없습니다!')
-      return
+      this.$router.push({name: 'happeed'})
     },
     goNextPage() {
       this.$router.push({name: 'happlossome'})
