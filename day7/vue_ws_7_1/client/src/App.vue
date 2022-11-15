@@ -10,7 +10,7 @@
         <router-link :to="{ name: 'Login' }">Login</router-link> 
       </span>
     </div>
-    <router-view/>
+    <router-view @login='login'/>
   </div>
 </template>
 
@@ -19,11 +19,13 @@ export default {
   name: 'App',
   data: function () {
     return {
-
+      // isLogin : false
     }
   },
   methods: {
-
+    login(){
+      this.isLogin != true
+    }
   },
 }
 </script>
